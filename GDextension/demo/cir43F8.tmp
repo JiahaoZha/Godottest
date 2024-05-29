@@ -1,0 +1,7 @@
+[gd_resource type="GDExtensionScript" load_steps=2 format=2]
+
+[ext_resource path="res://mylibrary.gdextension" type="GDExtension" id=1]
+
+[resource]
+class_name = "Circle2"
+library = ExtResource( 1 )

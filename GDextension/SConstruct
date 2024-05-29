@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+import os
+import sys
+
+# 设置 Godot-Cpp 的路径
+godot_cpp_path = os.path.join(os.getcwd(), "godot-cpp")  # 修改为 godot-cpp 的实际路径
+
+# 加载 Godot-Cpp 的 SConstruct 文件
+env = SConscript(os.path.join(godot_cpp_path, "SConstruct"))
+
+# 确保包含路径正确
+env.Append(CPPPATH=[
+    os.path.join(godot_cpp_path, "include"),
+    os.path.join(godot_cpp_path, "include/core"),
+    os.path.join(godot_cpp_path, "include/gen"),
+    os.path.join(godot_cpp_path, "gen/include"),  # 包含生成的 include 目录
+])
+
+# 包含 src 目录
+env.Append(CPPPATH=["src/"])
+
+# 收集所有源文件
+sources = Glob("src/*.cpp")
+
+# 根据平台设置共享库的输出路径
+if env["platform"] == "macos":
+    library = env.SharedLibrary(
+        "demo/bin/libgdexample.{}.{}.framework/libgdexample.{}.{}".format(
+            env["platform"], env["target"], env["platform"], env["target"]
+        ),
+        source=sources,
+    )
+else:
+    library = env.SharedLibrary(
+        "demo/bin/libgdexample{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        source=sources,
+    )
+
+# 设置共享库为默认目标
+Default(library)
+

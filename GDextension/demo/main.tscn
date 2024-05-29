@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk13e07xh5ssa"]
+
+[ext_resource type="Texture2D" uid="uid://dipujxhgqd5xd" path="res://icon.svg" id="1_hfray"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qyr4r"]
+bounce = 1.0
+
+[node name="Node" type="Node"]
+
+[node name="GDExample" type="GDExample" parent="."]
+position = Vector2(5.68814, 6.7184)
+texture = ExtResource("1_hfray")
+centered = false
+
+[node name="MovingSprite" type="MovingSprite" parent="GDExample"]
+position = Vector2(-5123.48, 1.94108)
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_qyr4r")
+max_contacts_reported = 1
+contact_monitor = true
+linear_damp_mode = 1
+linear_damp = 0.1
+angular_damp_mode = 1
+angular_damp = 0.1
