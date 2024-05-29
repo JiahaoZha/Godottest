@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://db6uulx3w8fcd"]
+
+[ext_resource type="Script" path="res://主场景.gd" id="1_0jchn"]
+[ext_resource type="Texture2D" uid="uid://cduchr8oyv6gb" path="res://圆形素材.png" id="1_igyls"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h15yc"]
+radius = 58.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwtb2"]
+radius = 38.0132
+
+[node name="场景" type="Node2D"]
+script = ExtResource("1_0jchn")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-91.0001, -89)
+scale = Vector2(0.0596667, 0.0596667)
+texture = ExtResource("1_igyls")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_h15yc")
+debug_color = Color(0.422268, 0.506113, 0.865168, 0.42)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(219, 0)
+mass = 0.01
+linear_velocity = Vector2(-60, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+position = Vector2(-60, -65)
+scale = Vector2(0.04, 0.0436666)
+texture = ExtResource("1_igyls")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_gwtb2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(112, 1)
+zoom = Vector2(2.035, 2.035)
