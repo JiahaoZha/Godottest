@@ -1,0 +1,97 @@
+[gd_scene load_steps=16 format=3 uid="uid://kr356govwo15"]
+
+[ext_resource type="Texture2D" uid="uid://p8p2dirtspjd" path="res://地球贴图.jpg" id="1_u0ux4"]
+[ext_resource type="Script" path="res://planet.gd" id="2_k8qnq"]
+[ext_resource type="Script" path="res://satellite.gd" id="3_bpq5w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5j4o1"]
+sky_top_color = Color(0.812724, 0.847061, 0.89504, 1)
+sky_horizon_color = Color(0.712702, 0.718715, 0.728297, 1)
+ground_bottom_color = Color(0.0380849, 0.027801, 0.0181484, 1)
+ground_horizon_color = Color(0.712702, 0.718715, 0.728297, 1)
+
+[sub_resource type="Sky" id="Sky_hufr5"]
+sky_material = SubResource("ProceduralSkyMaterial_5j4o1")
+
+[sub_resource type="Environment" id="Environment_d0to1"]
+background_mode = 2
+sky = SubResource("Sky_hufr5")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gdn8"]
+albedo_texture = ExtResource("1_u0ux4")
+
+[sub_resource type="SphereMesh" id="SphereMesh_exhsu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_um7f1"]
+albedo_color = Color(0, 18.379, 40.54, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_j8mr7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw4ku"]
+albedo_color = Color(88.649, 49.73, 30.27, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_csluo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmnco"]
+albedo_color = Color(4.865, 100, 32.973, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_73khy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h33ii"]
+albedo_color = Color(27.027, 0.474, 0.891, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d0to1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 150, 0)
+fov = 100.0
+
+[node name="planet" type="MeshInstance3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 10, 0)
+material_override = SubResource("StandardMaterial3D_6gdn8")
+mesh = SubResource("SphereMesh_exhsu")
+script = ExtResource("2_k8qnq")
+rotation_speed = 100.0
+
+[node name="卫星1" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.99365, 0, -0.19506, 0, 3, 0, 0.19506, 0, 2.99365, 23.9559, 0, 0)
+material_override = SubResource("StandardMaterial3D_um7f1")
+mesh = SubResource("SphereMesh_j8mr7")
+skeleton = NodePath("")
+script = ExtResource("3_bpq5w")
+orbit_radius = 60.0
+orbit_speed = 100.0
+
+[node name="卫星2" type="MeshInstance3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 48.4118, 0, 0)
+material_override = SubResource("StandardMaterial3D_nw4ku")
+mesh = SubResource("SphereMesh_csluo")
+script = ExtResource("3_bpq5w")
+orbit_radius = 90.0
+orbit_speed = 20.0
+
+[node name="卫星3" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 79.2946, 0, 0)
+material_override = SubResource("StandardMaterial3D_hmnco")
+mesh = SubResource("SphereMesh_73khy")
+script = ExtResource("3_bpq5w")
+orbit_radius = 150.0
+orbit_speed = 30.0
+
+[node name="卫星4" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 123.749, 0, 0)
+material_override = SubResource("StandardMaterial3D_h33ii")
+mesh = SubResource("SphereMesh_j8mr7")
+skeleton = NodePath("")
+script = ExtResource("3_bpq5w")
+orbit_radius = 70.0
+orbit_speed = 50.0
