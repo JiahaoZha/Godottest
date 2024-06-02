@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://kr356govwo15"]
+[gd_scene load_steps=18 format=3 uid="uid://kr356govwo15"]
 
 [ext_resource type="Texture2D" uid="uid://p8p2dirtspjd" path="res://地球贴图.jpg" id="1_u0ux4"]
 [ext_resource type="Script" path="res://planet.gd" id="2_k8qnq"]
 [ext_resource type="Script" path="res://satellite.gd" id="3_bpq5w"]
+[ext_resource type="PackedScene" uid="uid://chu72hm63abhx" path="res://拖尾testing.tscn" id="4_28gdh"]
+[ext_resource type="Script" path="res://satellite_anticlock.gd" id="5_b8kjr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5j4o1"]
 sky_top_color = Color(0.812724, 0.847061, 0.89504, 1)
@@ -52,7 +54,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 150, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 130, 0)
 fov = 100.0
 
 [node name="planet" type="MeshInstance3D" parent="."]
@@ -71,13 +73,19 @@ script = ExtResource("3_bpq5w")
 orbit_radius = 60.0
 orbit_speed = 100.0
 
+[node name="拖尾效果01" parent="卫星1" instance=ExtResource("4_28gdh")]
+amount = 100
+
 [node name="卫星2" type="MeshInstance3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 48.4118, 0, 0)
 material_override = SubResource("StandardMaterial3D_nw4ku")
 mesh = SubResource("SphereMesh_csluo")
-script = ExtResource("3_bpq5w")
+script = ExtResource("5_b8kjr")
 orbit_radius = 90.0
-orbit_speed = 20.0
+orbit_speed = 40.0
+
+[node name="拖尾效果01" parent="卫星2" instance=ExtResource("4_28gdh")]
+material_override = SubResource("StandardMaterial3D_nw4ku")
 
 [node name="卫星3" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 79.2946, 0, 0)
@@ -87,11 +95,17 @@ script = ExtResource("3_bpq5w")
 orbit_radius = 150.0
 orbit_speed = 30.0
 
+[node name="拖尾效果01" parent="卫星3" instance=ExtResource("4_28gdh")]
+material_override = SubResource("StandardMaterial3D_hmnco")
+
 [node name="卫星4" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 123.749, 0, 0)
 material_override = SubResource("StandardMaterial3D_h33ii")
 mesh = SubResource("SphereMesh_j8mr7")
 skeleton = NodePath("")
-script = ExtResource("3_bpq5w")
-orbit_radius = 70.0
-orbit_speed = 50.0
+script = ExtResource("5_b8kjr")
+orbit_radius = 180.0
+orbit_speed = 60.0
+
+[node name="拖尾效果01" parent="卫星4" instance=ExtResource("4_28gdh")]
+material_override = SubResource("StandardMaterial3D_h33ii")
