@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1a3ekp0gb0vo"]
+
+[ext_resource type="Script" path="res://Enemy/Base/base.gd" id="1_rlk2p"]
+[ext_resource type="PackedScene" uid="uid://batst85gibq5h" path="res://Assert/Base.glb" id="2_uqkn3"]
+
+[sub_resource type="SystemFont" id="SystemFont_1hifn"]
+
+[node name="Base" type="Node3D" groups=["base"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -8)
+script = ExtResource("1_rlk2p")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+billboard = 1
+text = "5
+"
+font = SubResource("SystemFont_1hifn")
+font_size = 500
+outline_size = 100
+
+[node name="Base" parent="." instance=ExtResource("2_uqkn3")]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcxgrtreienkb"]
+
+[ext_resource type="Script" path="res://Turret/turret.gd" id="1_abp82"]
+[ext_resource type="PackedScene" uid="uid://da3cfu5v7v1o" path="res://Turret/projectile.tscn" id="1_tawlk"]
+[ext_resource type="PackedScene" uid="uid://c4sl8ylkmnw8n" path="res://Assert/Cannon.glb" id="3_dbipe"]
+[ext_resource type="PackedScene" uid="uid://bvg1gbi4saon6" path="res://Assert/TurretBase.glb" id="4_8acvf"]
+
+[sub_resource type="Animation" id="Animation_1uper"]
+resource_name = "Fire"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Turretbase/Turrettop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.3, -0.6), Vector3(0, 0.3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kmyru"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Turretbase/Turrettop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.3, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wll13"]
+_data = {
+"Fire": SubResource("Animation_1uper"),
+"RESET": SubResource("Animation_kmyru")
+}
+
+[node name="Turret" type="Node3D"]
+script = ExtResource("1_abp82")
+projectile = ExtResource("1_tawlk")
+
+[node name="Turretbase" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Turrettop" type="Node3D" parent="Turretbase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="Cannon" parent="Turretbase/Turrettop" instance=ExtResource("3_dbipe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wll13")
+}
+
+[node name="TurretBase2" parent="." instance=ExtResource("4_8acvf")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
