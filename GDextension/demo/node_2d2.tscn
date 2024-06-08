@@ -2,19 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://cm68iy7bykenc" path="res://圆形素材.png" id="1_gylbq"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mc6bl"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k8nx5"]
 bounce = 1.0
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wfflx"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eh5dv"]
 bounce = 1.0
 
 [node name="Node2D" type="Node2D"]
 
 [node name="MovingSprite" type="MovingSprite" parent="."]
 speed = 0.0
-position = Vector2(-323, 0)
+position = Vector2(200, 0)
 mass = 5.0
-physics_material_override = SubResource("PhysicsMaterial_mc6bl")
+physics_material_override = SubResource("PhysicsMaterial_k8nx5")
 max_contacts_reported = 1
 contact_monitor = true
 linear_damp_mode = 1
@@ -28,10 +28,10 @@ scale = Vector2(0.052, 0.0448333)
 texture = ExtResource("1_gylbq")
 
 [node name="MovingSprite2" type="MovingSprite" parent="."]
-position = Vector2(2237.26, 1)
+position = Vector2(-200, 1)
 mass = 0.01
-physics_material_override = SubResource("PhysicsMaterial_wfflx")
-max_contacts_reported = 1
+physics_material_override = SubResource("PhysicsMaterial_eh5dv")
+max_contacts_reported = 10
 contact_monitor = true
 linear_damp_mode = 1
 linear_damp = 0.1

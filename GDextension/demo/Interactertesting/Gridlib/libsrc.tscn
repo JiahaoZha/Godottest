@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://uof8mmst4pv0"]
+
+[ext_resource type="PackedScene" uid="uid://crxglylm3svb0" path="res://Assert/Rocks.glb" id="1_5ouiq"]
+[ext_resource type="PackedScene" uid="uid://brynls2mx3p65" path="res://Assert/Tree.glb" id="2_ptsik"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kx08m"]
+albedo_color = Color(0.505882, 0.788235, 0.592157, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h5wxa"]
+material = SubResource("StandardMaterial3D_kx08m")
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vuk0o"]
+data = PackedVector3Array(-2, 0.05, 2, 2, 0.05, 2, -2, -0.05, 2, 2, 0.05, 2, 2, -0.05, 2, -2, -0.05, 2, 2, 0.05, -2, -2, 0.05, -2, 2, -0.05, -2, -2, 0.05, -2, -2, -0.05, -2, 2, -0.05, -2, 2, 0.05, 2, 2, 0.05, -2, 2, -0.05, 2, 2, 0.05, -2, 2, -0.05, -2, 2, -0.05, 2, -2, 0.05, -2, -2, 0.05, 2, -2, -0.05, -2, -2, 0.05, 2, -2, -0.05, 2, -2, -0.05, -2, 2, 0.05, 2, -2, 0.05, 2, 2, 0.05, -2, -2, 0.05, 2, -2, 0.05, -2, 2, 0.05, -2, -2, -0.05, 2, 2, -0.05, 2, -2, -0.05, -2, 2, -0.05, 2, 2, -0.05, -2, -2, -0.05, -2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrafd"]
+albedo_color = Color(0.979798, 0.379363, 0.527057, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jxj4b"]
+material = SubResource("StandardMaterial3D_jrafd")
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_l6tvf"]
+data = PackedVector3Array(-2, 0.05, 2, 2, 0.05, 2, -2, -0.05, 2, 2, 0.05, 2, 2, -0.05, 2, -2, -0.05, 2, 2, 0.05, -2, -2, 0.05, -2, 2, -0.05, -2, -2, 0.05, -2, -2, -0.05, -2, 2, -0.05, -2, 2, 0.05, 2, 2, 0.05, -2, 2, -0.05, 2, 2, 0.05, -2, 2, -0.05, -2, 2, -0.05, 2, -2, 0.05, -2, -2, 0.05, 2, -2, -0.05, -2, -2, 0.05, 2, -2, -0.05, 2, -2, -0.05, -2, 2, 0.05, 2, -2, 0.05, 2, 2, 0.05, -2, -2, 0.05, 2, -2, 0.05, -2, 2, 0.05, -2, -2, -0.05, 2, 2, -0.05, 2, -2, -0.05, -2, 2, -0.05, 2, 2, -0.05, -2, -2, -0.05, -2)
+
+[node name="Libsrc" type="Node3D"]
+
+[node name="Greenpad" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("BoxMesh_h5wxa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Greenpad"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greenpad/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vuk0o")
+
+[node name="Redpad" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("BoxMesh_jxj4b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Redpad"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Redpad/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_l6tvf")
+
+[node name="Rocks" parent="." groups=["Object"] instance=ExtResource("1_5ouiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+
+[node name="Tree" parent="." instance=ExtResource("2_ptsik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)

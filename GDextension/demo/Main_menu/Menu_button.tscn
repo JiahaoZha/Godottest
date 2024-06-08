@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwbj3txq3leex"]
+
+[ext_resource type="StyleBox" uid="uid://c42x4l1ky20qw" path="res://Main_menu/Non_select_Button.tres" id="1_8alsp"]
+[ext_resource type="StyleBox" uid="uid://fsjn1vciyp5a" path="res://Main_menu/Button.tres" id="2_m0y1f"]
+[ext_resource type="Script" path="res://Main_menu/Menu_button.gd" id="3_ps1uc"]
+
+[node name="Button" type="Button"]
+offset_right = 375.0
+offset_bottom = 71.0
+theme_override_styles/normal = ExtResource("1_8alsp")
+theme_override_styles/hover = ExtResource("2_m0y1f")
+theme_override_styles/pressed = ExtResource("2_m0y1f")
+theme_override_styles/focus = ExtResource("1_8alsp")
+script = ExtResource("3_ps1uc")

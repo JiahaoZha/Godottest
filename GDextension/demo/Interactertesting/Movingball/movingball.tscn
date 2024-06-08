@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://di68tnxgg7n16"]
+
+[ext_resource type="Script" path="res://Interactertesting/Movingball/movingball.gd" id="1_qa458"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_st6r6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie00s"]
+transparency = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.411765, 1, 1, 1)
+roughness = 0.02
+
+[sub_resource type="SphereMesh" id="SphereMesh_7pe6t"]
+material = SubResource("StandardMaterial3D_ie00s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgdju"]
+render_priority = -1
+transparency = 1
+cull_mode = 1
+shading_mode = 0
+grow = true
+grow_amount = 0.02
+
+[sub_resource type="SphereMesh" id="SphereMesh_ddrpl"]
+
+[node name="Movingball" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+script = ExtResource("1_qa458")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="selectcollision" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_st6r6")
+
+[node name="Ballcolor" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_7pe6t")
+
+[node name="ballcollision" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_st6r6")
+
+[node name="Balltag" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+billboard = 1
+text = "Ball"
+font_size = 64
+
+[node name="Highlight" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_tgdju")
+mesh = SubResource("SphereMesh_ddrpl")
+
+[node name="Target" type="Node3D" parent="."]
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

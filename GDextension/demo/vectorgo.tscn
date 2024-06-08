@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq35n0mm7csdd"]
+
+[ext_resource type="Script" path="res://testing.gd" id="1_x2c68"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q47q2"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_0yrmm"]
+sky_material = SubResource("ProceduralSkyMaterial_q47q2")
+
+[sub_resource type="Environment" id="Environment_m3amg"]
+background_mode = 2
+sky = SubResource("Sky_0yrmm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qap2"]
+albedo_color = Color(0.341176, 1, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s6anb"]
+
+[node name="Vectorgo" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m3amg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.640351, 0.768082, 0, -0.768082, 0.640351, 0, 50, 9.247)
+
+[node name="Movingpoint" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_3qap2")
+mesh = SubResource("CylinderMesh_s6anb")
+script = ExtResource("1_x2c68")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="Movingpoint" method="_on_timer_timeout"]
