@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3rkdcd8s41j1"]
+
+[ext_resource type="PackedScene" uid="uid://b7ldlbe7htcq0" path="res://Weapons/hitscanweapons.tscn" id="1_ro25s"]
+[ext_resource type="PackedScene" uid="uid://dkjf0b2gny3ff" path="res://Weapons/m_4a_1.tscn" id="2_pmn1x"]
+[ext_resource type="AudioStream" uid="uid://6rv5sfa37oo7" path="res://resource/M4A1/gunshot_smg_shot.mp3" id="3_h7jyo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8p0tb"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="Curve" id="Curve_1jlll"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ufi7a"]
+curve = SubResource("Curve_1jlll")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_621cl"]
+direction = Vector3(0, 0, -1)
+spread = 8.0
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ufi7a")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2u6mg"]
+size = Vector3(0.01, 0.01, 0.01)
+
+[node name="M4A1" node_paths=PackedStringArray("weapon_mesh", "muzzle_flash") instance=ExtResource("1_ro25s")]
+weapon_mesh = NodePath("M4A1")
+muzzle_flash = NodePath("M4A1/Muzzle_flash")
+
+[node name="M4A1" parent="." index="2" instance=ExtResource("2_pmn1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00680052, 0, -0.177901)
+
+[node name="Muzzle_flash" type="GPUParticles3D" parent="M4A1" index="78"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 7.45058e-09, 0, 1, -0.000103606, 0.046636, -0.354837)
+layers = 2
+material_override = SubResource("StandardMaterial3D_8p0tb")
+cast_shadow = 0
+emitting = false
+lifetime = 0.07
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_621cl")
+draw_pass_1 = SubResource("BoxMesh_2u6mg")
+
+[node name="Gunfire" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("3_h7jyo")
