@@ -1,4 +1,7 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://dm8t4tjyddbcb"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dm8t4tjyddbcb"]
+
+[ext_resource type="Texture2D" uid="uid://5h7m6ujx2v7f" path="res://Level/Material/prototype-texture-with-size.png" id="1_vp75l"]
 
 [resource]
-albedo_color = Color(0.18359, 0.18359, 0.18359, 1)
+albedo_texture = ExtResource("1_vp75l")
+uv1_triplanar = true

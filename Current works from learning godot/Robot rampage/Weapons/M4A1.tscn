@@ -1,43 +1,129 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3rkdcd8s41j1"]
+[gd_scene load_steps=16 format=3 uid="uid://b3rkdcd8s41j1"]
 
 [ext_resource type="PackedScene" uid="uid://b7ldlbe7htcq0" path="res://Weapons/hitscanweapons.tscn" id="1_ro25s"]
-[ext_resource type="PackedScene" uid="uid://dkjf0b2gny3ff" path="res://Weapons/m_4a_1.tscn" id="2_pmn1x"]
+[ext_resource type="PackedScene" uid="uid://318kcx34ad7m" path="res://Weapons/sparks.tscn" id="2_0nxng"]
+[ext_resource type="PackedScene" uid="uid://dkjf0b2gny3ff" path="res://Weapons/m4a1_model.tscn" id="2_pmn1x"]
 [ext_resource type="AudioStream" uid="uid://6rv5sfa37oo7" path="res://resource/M4A1/gunshot_smg_shot.mp3" id="3_h7jyo"]
+[ext_resource type="AudioStream" uid="uid://btqpqrj05823o" path="res://Weapons/gun_empty.mp3" id="5_k12x0"]
+[ext_resource type="AudioStream" uid="uid://glo0524025qi" path="res://resource/M4A1/M4_reloading.mp3" id="6_l04ca"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8p0tb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bio62"]
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 3.0
 
-[sub_resource type="Curve" id="Curve_1jlll"]
+[sub_resource type="Curve" id="Curve_75kdp"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_ufi7a"]
-curve = SubResource("Curve_1jlll")
+[sub_resource type="CurveTexture" id="CurveTexture_yp4yo"]
+curve = SubResource("Curve_75kdp")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_621cl"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dk0u8"]
 direction = Vector3(0, 0, -1)
 spread = 8.0
 initial_velocity_min = 6.0
 initial_velocity_max = 8.0
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_ufi7a")
+scale_curve = SubResource("CurveTexture_yp4yo")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2u6mg"]
 size = Vector3(0.01, 0.01, 0.01)
 
-[node name="M4A1" node_paths=PackedStringArray("weapon_mesh", "muzzle_flash") instance=ExtResource("1_ro25s")]
+[sub_resource type="Animation" id="Animation_mje6v"]
+resource_name = "Moving"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("M4A1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.1, -0.1, 0.6), Vector3(0.115, -0.108, 0.61), Vector3(0.1, -0.1, 0.6), Vector3(0.085, -0.108, 0.6), Vector3(0.1, -0.1, 0.6)]
+}
+
+[sub_resource type="Animation" id="Animation_dhvck"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("M4A1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, -0.1, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("M4A1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cfybg"]
+resource_name = "Reload"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("M4A1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1.3, 1.9, 2.1, 2.2, 2.5),
+"transitions": PackedFloat32Array(-2, -0.5, -0.5, -2, 1, 1, -2),
+"update": 0,
+"values": [Vector3(0.1, -0.1, 0.6), Vector3(0.1, -0.2, 0.6), Vector3(0.1, -0.1, 0.6), Vector3(0.1, -0.1, 0.65), Vector3(0.1, -0.1, 0.66), Vector3(0.1, -0.1, 0.7), Vector3(0.1, -0.1, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("M4A1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.7, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, -2, -2, -2, 1, -2),
+"update": 0,
+"values": [Vector3(0, 0, -0.349066), Vector3(-0.47822, 0, -0.261799), Vector3(-0.427937, 0, 0), Vector3(-0.0715585, 0, 0.349066), Vector3(-0.417134, 0, 0.462512), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mhql3"]
+_data = {
+"Moving": SubResource("Animation_mje6v"),
+"RESET": SubResource("Animation_dhvck"),
+"Reload": SubResource("Animation_cfybg")
+}
+
+[node name="rifle" node_paths=PackedStringArray("weapon_mesh", "muzzle_flash", "Scoping_position", "Action", "empty_sound", "reloading") instance=ExtResource("1_ro25s")]
 weapon_mesh = NodePath("M4A1")
 muzzle_flash = NodePath("M4A1/Muzzle_flash")
+sparks = ExtResource("2_0nxng")
+Scoping_position = NodePath("M4A1/Scoping_position")
+Action = NodePath("Action")
+empty_sound = NodePath("Empty")
+reloading = NodePath("Reloading")
 
 [node name="M4A1" parent="." index="2" instance=ExtResource("2_pmn1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00680052, 0, -0.177901)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.1, 0.6)
 
 [node name="Muzzle_flash" type="GPUParticles3D" parent="M4A1" index="78"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 7.45058e-09, 0, 1, -0.000103606, 0.046636, -0.354837)
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.000103608, 0.046636, -0.374301)
 layers = 2
-material_override = SubResource("StandardMaterial3D_8p0tb")
+material_override = SubResource("StandardMaterial3D_bio62")
 cast_shadow = 0
 emitting = false
 lifetime = 0.07
@@ -45,8 +131,27 @@ one_shot = true
 explosiveness = 1.0
 fixed_fps = 60
 local_coords = true
-process_material = SubResource("ParticleProcessMaterial_621cl")
+process_material = SubResource("ParticleProcessMaterial_dk0u8")
 draw_pass_1 = SubResource("BoxMesh_2u6mg")
+
+[node name="Scoping_position" type="Node3D" parent="M4A1" index="79"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0.8)
 
 [node name="Gunfire" type="AudioStreamPlayer3D" parent="." index="3"]
 stream = ExtResource("3_h7jyo")
+
+[node name="Action" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_mhql3")
+}
+
+[node name="Empty" type="AudioStreamPlayer3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0506856, 0, 0.860787)
+stream = ExtResource("5_k12x0")
+
+[node name="Reloading" type="AudioStreamPlayer3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0530867, 0, 0.851192)
+stream = ExtResource("6_l04ca")
+volume_db = -40.0
+
+[connection signal="animation_finished" from="Action" to="." method="_on_action_animation_finished"]

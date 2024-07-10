@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpkdlnbrp4olc"]
+
+[ext_resource type="Shader" uid="uid://b2lbplh5hk82p" path="res://harzard/lava.tres" id="1_0epyx"]
+[ext_resource type="Script" path="res://harzard/lava.gd" id="1_57icg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ylcf4"]
+render_priority = 0
+shader = ExtResource("1_0epyx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fddso"]
+resource_local_to_scene = true
+size = Vector2(10, 10)
+
+[node name="lava" type="Area3D"]
+script = ExtResource("1_57icg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_ylcf4")
+mesh = SubResource("PlaneMesh_fddso")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+light_color = Color(1, 0.501961, 0, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_attenuation = 0.277393
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,17 +1,97 @@
-[gd_scene load_steps=8 format=3 uid="uid://cn825jseo4vkx"]
+[gd_scene load_steps=20 format=3 uid="uid://cn825jseo4vkx"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3btna"]
 [ext_resource type="Script" path="res://Player/Smooth_camera.gd" id="2_asg2k"]
-[ext_resource type="PackedScene" uid="uid://b3rkdcd8s41j1" path="res://Weapons/M4A1.tscn" id="3_mq0of"]
+[ext_resource type="PackedScene" uid="uid://wx51mjvi56h" path="res://Weapons/DMR_rifle.tscn" id="3_dryo4"]
 [ext_resource type="Script" path="res://Player/Crosshair.gd" id="3_p7nk0"]
-[ext_resource type="PackedScene" uid="uid://318kcx34ad7m" path="res://Weapons/sparks.tscn" id="4_d7f1h"]
+[ext_resource type="Script" path="res://Player/Weaponhandler.gd" id="3_tyu5t"]
+[ext_resource type="PackedScene" uid="uid://b3rkdcd8s41j1" path="res://Weapons/M4A1.tscn" id="3_uj0kk"]
+[ext_resource type="Texture2D" uid="uid://b0p2s22vugl2i" path="res://Player/damage.png" id="6_ji26g"]
+[ext_resource type="Script" path="res://Player/Ammo_handler.gd" id="6_mjxos"]
+[ext_resource type="AudioStream" uid="uid://dq40ph2v0bo2" path="res://bgm/qieqiang.mp3" id="6_qrpuf"]
+[ext_resource type="PackedScene" uid="uid://bwr36kjq2otk2" path="res://Player/gameover.tscn" id="7_37td3"]
+[ext_resource type="AudioStream" uid="uid://b536fhgmq1mrm" path="res://bgm/pickuo.mp3" id="7_kx6fr"]
+[ext_resource type="FontFile" uid="uid://dndn5ckbopsy2" path="res://resource/Fronts/AovelSansRounded-rdDL.ttf" id="9_nrp0u"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ay5i7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eg7v1"]
 
+[sub_resource type="Animation" id="Animation_u350v"]
+resource_name = "Damaged"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qn04q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xpri3"]
+_data = {
+"Damaged": SubResource("Animation_u350v"),
+"RESET": SubResource("Animation_qn04q")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_5qwia"]
+font = ExtResource("9_nrp0u")
+font_size = 64
+font_color = Color(1, 1, 0.529412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8ed5"]
+font = ExtResource("9_nrp0u")
+font_size = 64
+font_color = Color(0.976471, 1, 1, 1)
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_3btna")
+SPEED = 5.0
+Jump_height = 2.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_ay5i7")
@@ -27,11 +107,6 @@ top_level = true
 cull_mask = 1048573
 fov = 90.0
 script = ExtResource("2_asg2k")
-
-[node name="M4A1" parent="CameraPivot/Smooth_camera" node_paths=PackedStringArray("weapon_mesh") instance=ExtResource("3_mq0of")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115, -0.105, -0.215)
-weapon_mesh = NodePath(".")
-sparks = ExtResource("4_d7f1h")
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="CameraPivot/Smooth_camera"]
 remote_path = NodePath("../../../SubViewportContainer/SubViewport/weapon_Camera")
@@ -51,8 +126,39 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="weapon_Camera" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
 cull_mask = 2
 fov = 40.0
+
+[node name="Weaponhandler" type="Node3D" parent="SubViewportContainer/SubViewport/weapon_Camera" node_paths=PackedStringArray("weapon1", "weapon2", "switch_gun")]
+unique_name_in_owner = true
+script = ExtResource("3_tyu5t")
+weapon1 = NodePath("M4A1")
+weapon2 = NodePath("DMR_rifle")
+switch_gun = NodePath("../../../../switch_gun")
+
+[node name="M4A1" parent="SubViewportContainer/SubViewport/weapon_Camera/Weaponhandler" node_paths=PackedStringArray("ammo_handler") instance=ExtResource("3_uj0kk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.947575)
+weapon_damage = 30
+automatic = true
+ammo_handler = NodePath("../../Ammo_handler")
+ammo_type = 1
+
+[node name="DMR_rifle" parent="SubViewportContainer/SubViewport/weapon_Camera/Weaponhandler" node_paths=PackedStringArray("ammo_handler") instance=ExtResource("3_dryo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+fire_rate = 2.0
+weapon_damage = 80
+ammo_handler = NodePath("../../Ammo_handler")
+
+[node name="Ammo_handler" type="Node" parent="SubViewportContainer/SubViewport/weapon_Camera" node_paths=PackedStringArray("ammolabel", "weapon_handler")]
+unique_name_in_owner = true
+script = ExtResource("6_mjxos")
+ammolabel = NodePath("../../../../MarginContainer/Ammo_label")
+weapon_handler = NodePath("../Weaponhandler")
+
+[node name="pick_sound" type="AudioStreamPlayer" parent="SubViewportContainer/SubViewport/weapon_Camera/Ammo_handler"]
+stream = ExtResource("7_kx6fr")
+volume_db = -20.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
@@ -60,7 +166,57 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Crosshair" type="Control" parent="CenterContainer"]
 layout_mode = 2
 script = ExtResource("3_p7nk0")
+
+[node name="Damage" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+mouse_filter = 2
+texture = ExtResource("6_ji26g")
+
+[node name="Damaged_AnimationPlayer" type="AnimationPlayer" parent="Damage"]
+libraries = {
+"": SubResource("AnimationLibrary_xpri3")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HP_label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "100"
+label_settings = SubResource("LabelSettings_5qwia")
+
+[node name="Ammo_label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "999"
+label_settings = SubResource("LabelSettings_v8ed5")
+
+[node name="Gameover" parent="." instance=ExtResource("7_37td3")]
+visible = false
+
+[node name="switch_gun" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qrpuf")
+volume_db = -20.0

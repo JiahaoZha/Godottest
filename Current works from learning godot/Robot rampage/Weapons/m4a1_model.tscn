@@ -1,0 +1,480 @@
+[gd_scene load_steps=55 format=3 uid="uid://dkjf0b2gny3ff"]
+
+[ext_resource type="PackedScene" uid="uid://cwdko0of81t40" path="res://resource/M4A1/M4A1.dae" id="1_xec36"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2y3te"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6ifv"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d55gl"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nog5t"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5stjs"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xboqo"]
+albedo_color = Color(0.823529, 0.705882, 0.54902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4i17"]
+albedo_color = Color(0.823529, 0.705882, 0.54902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7ioi"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfuak"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slask"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0m5n"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcoxw"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uo5ho"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wmg2"]
+albedo_color = Color(0.823529, 0.705882, 0.54902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87k31"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vc6o"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1ni6"]
+albedo_color = Color(0.823529, 0.705882, 0.54902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_057ho"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ehi8"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uwoxg"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0ijs"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cr6kb"]
+albedo_color = Color(0.314316, 0.314316, 0.314316, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckrhs"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3uxt"]
+albedo_color = Color(0.823529, 0.705882, 0.54902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03ofn"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6d8ou"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obwii"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(0, 0.65098, 0.207843, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r3s0"]
+shading_mode = 0
+albedo_color = Color(0.974052, 0, 0.100348, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_eus2y"]
+material = SubResource("StandardMaterial3D_7r3s0")
+inner_radius = 0.006
+outer_radius = 0.007
+
+[sub_resource type="SphereMesh" id="SphereMesh_2w1f0"]
+material = SubResource("StandardMaterial3D_7r3s0")
+radius = 0.001
+height = 0.002
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhsmt"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exi3c"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rdxr"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j875i"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfuei"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftblu"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8thfp"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6h05h"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1wgl"]
+albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pgcx"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5q2y"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7qmc"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r55vp"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxvoq"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ismx7"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lehuh"]
+albedo_color = Color(0.823529, 0.705882, 0.54902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3irsg"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_otg0p"]
+albedo_color = Color(0.823529, 0.705882, 0.54902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4m3dx"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bip6"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wma40"]
+albedo_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4dcq"]
+albedo_color = Color(0.823529, 0.705882, 0.470588, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3u8e"]
+albedo_color = Color(0.823529, 0.705882, 0.54902, 1)
+
+[node name="M4A1" instance=ExtResource("1_xec36")]
+
+[node name="M4_carbine_polySurface6_group1_M4_carbine_group13_M4_carbine_polySurface8" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.08, -0.215)
+layers = 2
+material_override = SubResource("StandardMaterial3D_2y3te")
+
+[node name="M4_carbine_polySurface6_group1_M4_carbine_group13_M4_carbine_polySurface9" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.08, -0.215)
+layers = 2
+material_override = SubResource("StandardMaterial3D_w6ifv")
+
+[node name="M4_carbine_polySurface6_M4_carbine_polySurface7_group1_M4_carbine_group13" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.08, -0.215)
+layers = 2
+material_override = SubResource("StandardMaterial3D_d55gl")
+
+[node name="M4_carbine_group15_M4_carbine_group14_M4_carbine_pCube32" parent="." index="3"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_nog5t")
+
+[node name="M4_carbine_group15_M4_carbine_group14_M4_carbine_pCylinder16" parent="." index="4"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_5stjs")
+
+[node name="M4_carbine_pPipe6_M4_carbine_group15_M4_carbine_group14" parent="." index="5"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder28" parent="." index="6"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder27" parent="." index="7"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder26" parent="." index="8"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder25" parent="." index="9"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder24" parent="." index="10"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder23" parent="." index="11"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder22" parent="." index="12"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder21" parent="." index="13"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder20" parent="." index="14"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder19" parent="." index="15"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder18" parent="." index="16"]
+layers = 2
+
+[node name="M4_carbine_group16_M4_carbine_pCylinder17" parent="." index="17"]
+layers = 2
+
+[node name="M4_carbine_pCube2_M4_carbine_group16" parent="." index="18"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_g4i17")
+
+[node name="M4_carbine_polySurface10_M4_carbine_polySurface6" parent="." index="19"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group12_M4_carbine_polySurface5" parent="." index="20"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_s7ioi")
+
+[node name="M4_carbine_group12_M4_carbine_pCylinder12" parent="." index="21"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_mfuak")
+
+[node name="M4_carbine_pCylinder13_M4_carbine_group12" parent="." index="22"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_slask")
+
+[node name="M4_carbine_group10_M4_carbine_pSphere2" parent="." index="23"]
+layers = 2
+
+[node name="M4_carbine_group10_M4_carbine_pCube19" parent="." index="24"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_u0m5n")
+
+[node name="M4_carbine_group10_M4_carbine_pSphere1" parent="." index="25"]
+layers = 2
+
+[node name="M4_carbine_group10_M4_carbine_pCube20" parent="." index="26"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_vcoxw")
+
+[node name="M4_carbine_group10_M4_carbine_pCylinder6" parent="." index="27"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_uo5ho")
+
+[node name="M4_carbine_group10_M4_carbine_pCylinder5" parent="." index="28"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_3wmg2")
+
+[node name="M4_carbine_pCube21_M4_carbine_group10" parent="." index="29"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_polySurface2" parent="." index="30"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_87k31")
+
+[node name="M4_carbine_group2_M4_carbine_pCube15" parent="." index="31"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_pCube14" parent="." index="32"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_pCube13" parent="." index="33"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_pCylinder4" parent="." index="34"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_4vc6o")
+
+[node name="M4_carbine_group2_M4_carbine_pCylinder3" parent="." index="35"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_pCube12" parent="." index="36"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_pCube11" parent="." index="37"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_d1ni6")
+
+[node name="M4_carbine_group2_M4_carbine_pCube10" parent="." index="38"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_pCube9" parent="." index="39"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_pCube8" parent="." index="40"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_057ho")
+
+[node name="M4_carbine_group2_M4_carbine_pCube3" parent="." index="41"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_pCube5" parent="." index="42"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_xboqo")
+
+[node name="M4_carbine_group2_M4_carbine_pCube6" parent="." index="43"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_6ehi8")
+
+[node name="M4_carbine_group2_M4_carbine_pCube4" parent="." index="44"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_uwoxg")
+
+[node name="M4_carbine_group2_M4_carbine_pCube1" parent="." index="45"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_f0ijs")
+
+[node name="M4_carbine_group2_M4_carbine_pCylinder2" parent="." index="46"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_cr6kb")
+
+[node name="M4_carbine_group2_M4_carbine_pCylinder1" parent="." index="47"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_ckrhs")
+
+[node name="M4_carbine_pCube7_M4_carbine_group2" parent="." index="48"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_a3uxt")
+
+[node name="pCylinder1" parent="." index="49"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_03ofn")
+
+[node name="pCube1" parent="." index="50"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_6d8ou")
+
+[node name="M4_carbine_pPlane1" parent="." index="51"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_obwii")
+transparency = 0.7
+cast_shadow = 0
+lod_bias = 0.001
+
+[node name="zhunxin" type="MeshInstance3D" parent="M4_carbine_pPlane1" index="0"]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0.09, 0.06)
+layers = 2
+cast_shadow = 0
+mesh = SubResource("TorusMesh_eus2y")
+
+[node name="center" type="MeshInstance3D" parent="M4_carbine_pPlane1/zhunxin" index="0"]
+layers = 2
+mesh = SubResource("SphereMesh_2w1f0")
+
+[node name="M4_carbine_polySurface19" parent="." index="52"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_nhsmt")
+
+[node name="M4_carbine_polySurface18" parent="." index="53"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_exi3c")
+
+[node name="M4_carbine_polySurface17" parent="." index="54"]
+layers = 2
+
+[node name="M4_carbine_polySurface16" parent="." index="55"]
+layers = 2
+
+[node name="M4_carbine_polySurface15" parent="." index="56"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_5rdxr")
+
+[node name="M4_carbine_polySurface14" parent="." index="57"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_j875i")
+
+[node name="M4_carbine_polySurface13" parent="." index="58"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_mfuei")
+
+[node name="M4_carbine_polySurface12" parent="." index="59"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_ftblu")
+
+[node name="M4_carbine_polySurface11" parent="." index="60"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_8thfp")
+
+[node name="M4_carbine_pCube30" parent="." index="61"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_6h05h")
+
+[node name="M4_carbine_pCube29" parent="." index="62"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_a1wgl")
+
+[node name="M4_carbine_pCube28" parent="." index="63"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_3pgcx")
+
+[node name="M4_carbine_pCube27" parent="." index="64"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_t5q2y")
+
+[node name="M4_carbine_pPipe5" parent="." index="65"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_q7qmc")
+
+[node name="M4_carbine_pPipe4" parent="." index="66"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_r55vp")
+
+[node name="M4_carbine_pPipe3" parent="." index="67"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_rxvoq")
+
+[node name="M4_carbine_pPipe2" parent="." index="68"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_ismx7")
+
+[node name="M4_carbine_pCube26" parent="." index="69"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_lehuh")
+
+[node name="M4_carbine_pCube25" parent="." index="70"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_3irsg")
+
+[node name="M4_carbine_pCylinder10" parent="." index="71"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_otg0p")
+
+[node name="M4_carbine_pCylinder9" parent="." index="72"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_4m3dx")
+
+[node name="M4_carbine_pCylinder8" parent="." index="73"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_0bip6")
+
+[node name="M4_carbine_pCylinder7" parent="." index="74"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_wma40")
+
+[node name="M4_carbine_desmont_magpul20rnd" parent="." index="75"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_e4dcq")
+
+[node name="M4_carbine_desmont_verticalgrip" parent="." index="76"]
+layers = 2
+material_override = SubResource("StandardMaterial3D_m3u8e")

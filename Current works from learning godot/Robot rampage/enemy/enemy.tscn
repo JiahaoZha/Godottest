@@ -1,63 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpij3ntfe5dbn"]
+[gd_scene load_steps=14 format=3 uid="uid://bpij3ntfe5dbn"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_g1524"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_1mnr7"]
+[ext_resource type="PackedScene" uid="uid://bx40cuvknpb2" path="res://enemy/drone_1.glb" id="2_s0txj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l750u"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgiau"]
-albedo_color = Color(1, 0.0663139, 0.17725, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ig0m2"]
-size = Vector3(0.5, 0.2, 0.2)
+radius = 1.0
 
 [sub_resource type="Animation" id="Animation_icppl"]
 resource_name = "Attack"
 length = 0.5
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("visor:position")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(-2, -2, -2),
-"update": 0,
-"values": [Vector3(0, 0.5, 0.5), Vector3(0, 0.5, 0.6), Vector3(0, 0.5, 0.5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("visor:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(-2, -2, -2),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("visor:material_override:albedo_color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(-2, -2, -2),
-"update": 0,
-"values": [Color(1, 0.0663139, 0.17725, 1), Color(1, 1, 1, 1), Color(1, 0.0663139, 0.17725, 1)]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -65,70 +23,98 @@ tracks/3/keys = {
 "method": &"attack"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("drone:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.5, 0.5), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_frurl"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("visor:position")
+tracks/0/path = NodePath("drone:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.5, 0.5)]
+"values": [Vector3(0, 0, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("visor:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+
+[sub_resource type="Animation" id="Animation_2yajj"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("drone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("visor:material_override:albedo_color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0.0663139, 0.17725, 1)]
+"values": [Vector3(0, 0, 0), Vector3(0, -0.3, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0u7j8"]
 _data = {
 "Attack": SubResource("Animation_icppl"),
-"RESET": SubResource("Animation_frurl")
+"RESET": SubResource("Animation_frurl"),
+"idle": SubResource("Animation_2yajj")
 }
 
-[node name="Enemy" type="CharacterBody3D"]
-script = ExtResource("1_g1524")
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wnxbb"]
+animation = &"Attack"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_1mnr7")
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_40efc"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q861b"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nug4m"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3k7b5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_defy5"]
+states/Attack/node = SubResource("AnimationNodeAnimation_wnxbb")
+states/Attack/position = Vector2(607, 59)
+states/Start/position = Vector2(202, 59)
+states/idle/node = SubResource("AnimationNodeAnimation_40efc")
+states/idle/position = Vector2(344, 59)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_q861b"), "idle", "Attack", SubResource("AnimationNodeStateMachineTransition_nug4m"), "Attack", "idle", SubResource("AnimationNodeStateMachineTransition_3k7b5")]
+graph_offset = Vector2(-129, 9)
+
+[node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_g1524")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_l750u")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
-
-[node name="visor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
-material_override = SubResource("StandardMaterial3D_xgiau")
-mesh = SubResource("BoxMesh_ig0m2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0u7j8")
 }
+autoplay = "idle"
+
+[node name="drone" parent="." instance=ExtResource("2_s0txj")]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_defy5")
+anim_player = NodePath("../AnimationPlayer")

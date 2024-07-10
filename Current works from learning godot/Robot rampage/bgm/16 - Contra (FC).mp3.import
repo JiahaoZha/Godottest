@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds02h8p7nvugg"
+path="res://.godot/imported/16 - Contra (FC).mp3-544753603cab5d74940a0126dfb23345.mp3str"
+
+[deps]
+
+source_file="res://bgm/16 - Contra (FC).mp3"
+dest_files=["res://.godot/imported/16 - Contra (FC).mp3-544753603cab5d74940a0126dfb23345.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
