@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://di68tnxgg7n16"]
+[gd_scene load_steps=8 format=3 uid="uid://di68tnxgg7n16"]
 
 [ext_resource type="Script" path="res://Interactertesting/Movingball/movingball.gd" id="1_qa458"]
+[ext_resource type="PackedScene" uid="uid://d3y6uhxcgew5t" path="res://Interactertesting/Interactpad/controlpanel.tscn" id="2_rta35"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_st6r6"]
 
@@ -53,5 +54,8 @@ material_override = SubResource("StandardMaterial3D_tgdju")
 mesh = SubResource("SphereMesh_ddrpl")
 
 [node name="Target" type="Node3D" parent="."]
+
+[node name="Controlpanel" parent="." instance=ExtResource("2_rta35")]
+visible = false
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

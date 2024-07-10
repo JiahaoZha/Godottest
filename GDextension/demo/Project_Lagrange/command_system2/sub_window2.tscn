@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://iwp0wgq8njtp"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/command_system2/sub_window2.gd" id="1_ipspr"]
+
+[node name="sub_window2" type="Control"]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ipspr")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_right = 95.0
+offset_bottom = 35.0
+
+[node name="Confirm" type="Button" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 200.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 16
+text = "Confirm"
+
+[node name="assign_func" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 40.0
+offset_right = 180.0
+offset_bottom = 80.0
+
+[node name="second_input" type="LineEdit" parent="assign_func"]
+layout_mode = 0
+offset_left = 150.0
+offset_right = 250.0
+offset_bottom = 40.0
+
+[node name="plus" type="Label" parent="assign_func"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "+"
+horizontal_alignment = 1
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmqm2s6etql0k"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/Command_editor/command_editor.gd" id="1_ox3ns"]
+[ext_resource type="Script" path="res://Project_Lagrange/Command_editor/Command_box.gd" id="1_ss7tv"]
+[ext_resource type="PackedScene" uid="uid://bb813w3v653af" path="res://Project_Lagrange/command_system2/Command_system2.tscn" id="3_d7vui"]
+[ext_resource type="Script" path="res://Project_Lagrange/Command_editor/layer.gd" id="4_6x4gw"]
+[ext_resource type="PackedScene" uid="uid://bcd82xxg5adq" path="res://Project_Lagrange/command_system3/menu_bar.tscn" id="4_b38pi"]
+[ext_resource type="PackedScene" uid="uid://daw4yara6gfuf" path="res://Project_Lagrange/command_system3/trashbin.tscn" id="6_n52rc"]
+
+[node name="Command_editor" type="Node"]
+script = ExtResource("1_ox3ns")
+
+[node name="Command_box" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(1200, 650)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -657.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 10
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("1_ss7tv")
+command_box = ExtResource("3_d7vui")
+
+[node name="Control" type="CanvasLayer" parent="."]
+
+[node name="Delete_Button" type="Button" parent="Control"]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 50.0
+offset_right = 100.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Reset"
+
+[node name="Add_command_Button" type="Button" parent="Control"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 53.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 32
+text = "+"
+
+[node name="Save_Button" type="Button" parent="Control"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_right = 40.0
+offset_bottom = 53.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "Save"
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="layer_1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="trashbin" parent="." instance=ExtResource("6_n52rc")]
+position = Vector2(1221, 55)
+
+[node name="layer" type="CanvasLayer" parent="."]
+script = ExtResource("4_6x4gw")
+
+[node name="Save_Button2" type="Button" parent="layer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 113.0
+offset_top = 2.0
+offset_right = 193.0
+offset_bottom = 55.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "test print"
+
+[node name="menu_bar" parent="layer" instance=ExtResource("4_b38pi")]
+offset_left = -2.0
+offset_top = 85.0
+offset_right = 79.0
+offset_bottom = 151.0
+
+[connection signal="pressed" from="Control/Delete_Button" to="Command_box" method="_on_delete_button_pressed"]
+[connection signal="pressed" from="Control/Add_command_Button" to="Command_box" method="_on_add_command_button_pressed"]
+[connection signal="pressed" from="Control/Save_Button" to="Command_box" method="_on_save_button_pressed"]
+[connection signal="pressed" from="layer/Save_Button2" to="layer" method="_on_save_button_2_pressed"]

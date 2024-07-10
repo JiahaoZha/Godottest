@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://5jqylb8ef57r"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/Main_title.gd" id="1_ihrrh"]
+[ext_resource type="PackedScene" uid="uid://cwbj3txq3leex" path="res://Main_menu/Menu_button.tscn" id="2_06wgw"]
+[ext_resource type="Texture2D" uid="uid://c5ljobcoe8la3" path="res://Assert/background.jpg" id="5_0vw4s"]
+[ext_resource type="PackedScene" uid="uid://xvol6wsk3np1" path="res://Main_menu/Setting/Settingscene.tscn" id="6_r5u31"]
+
+[node name="Main_menu" type="Node2D"]
+script = ExtResource("1_ihrrh")
+
+[node name="Button_new_game2" parent="." instance=ExtResource("2_06wgw")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 490.0
+offset_top = 530.0
+offset_right = 790.0
+offset_bottom = 553.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../Button_Exit")
+focus_neighbor_bottom = NodePath("../Button_option")
+text = "New game"
+reference_path = "res://Interactertesting/interactertesting.tscn"
+start_focused = true
+
+[node name="Button_load_game" parent="." instance=ExtResource("2_06wgw")]
+offset_left = 490.0
+offset_top = 570.0
+offset_right = 790.0
+offset_bottom = 593.0
+focus_neighbor_top = NodePath("../Button_Exit")
+focus_neighbor_bottom = NodePath("../Button_option")
+text = "Load"
+
+[node name="Button_option" parent="." instance=ExtResource("2_06wgw")]
+offset_left = 490.0
+offset_top = 610.0
+offset_right = 790.0
+offset_bottom = 633.0
+focus_neighbor_top = NodePath("../Button_load_game")
+focus_neighbor_bottom = NodePath("../Button_Exit")
+text = "Option"
+script = null
+
+[node name="Button_Exit" parent="." instance=ExtResource("2_06wgw")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 490.0
+offset_top = 650.0
+offset_right = 790.0
+offset_bottom = 673.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Button_option")
+focus_neighbor_bottom = NodePath("../Button_load_game")
+text = "Exit"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -216.0
+offset_right = 1626.0
+offset_bottom = 1222.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
+texture = ExtResource("5_0vw4s")
+metadata/_edit_lock_ = true
+
+[node name="Setting menu" parent="." instance=ExtResource("6_r5u31")]
+visible = false
+
+[connection signal="pressed" from="Button_option" to="." method="_on_button_option_pressed"]
+[connection signal="pressed" from="Button_option" to="Setting menu" method="_on_button_option_pressed"]

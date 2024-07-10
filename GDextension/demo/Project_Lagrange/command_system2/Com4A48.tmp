@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb813w3v653af"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/command_system2/Command_system2.gd" id="1_58ex2"]
+
+[node name="Command_system2" type="Control" groups=["button"]]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_58ex2")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 20.0
+
+[node name="assign_func" type="LineEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 300.0
+offset_bottom = 80.0
+
+[node name="If_Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 32
+text = "If"
+horizontal_alignment = 1
+
+[node name="Confirm" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 100.0
+offset_right = 169.0
+offset_bottom = 31.0
+text = "confirm"
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_right = 1086.0
+offset_bottom = 400.0
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

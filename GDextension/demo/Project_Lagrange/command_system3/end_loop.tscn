@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://ws57nmxwapd1"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/command_system3/end_loop.gd" id="1_s4dfg"]
+[ext_resource type="Texture2D" uid="uid://dipujxhgqd5xd" path="res://icon.svg" id="2_s5q31"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ij8x"]
+size = Vector2(164, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pyst"]
+size = Vector2(182, 32)
+
+[node name="end_loop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_s4dfg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "}end_loop"
+horizontal_alignment = 1
+
+[node name="functions" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="functions"]
+position = Vector2(79, 22)
+shape = SubResource("RectangleShape2D_8ij8x")
+
+[node name="link_up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_up"]
+position = Vector2(79, -24)
+shape = SubResource("RectangleShape2D_3pyst")
+
+[node name="link_down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_down"]
+position = Vector2(78, 67)
+shape = SubResource("RectangleShape2D_3pyst")
+
+[node name="linkup" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-21, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_s5q31")
+
+[node name="linkdown" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-21, 35)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_s5q31")
+
+[connection signal="mouse_entered" from="functions" to="." method="_on_functions_mouse_entered"]
+[connection signal="mouse_exited" from="functions" to="." method="_on_functions_mouse_exited"]
+[connection signal="area_entered" from="link_up" to="." method="_on_link_up_area_entered"]
+[connection signal="area_exited" from="link_up" to="." method="_on_link_up_area_exited"]
+[connection signal="area_entered" from="link_down" to="." method="_on_link_down_area_entered"]
+[connection signal="area_exited" from="link_down" to="." method="_on_link_down_area_exited"]

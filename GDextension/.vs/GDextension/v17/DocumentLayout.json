@@ -3,36 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\printex.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\printex.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Hello_world.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Hello_world.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Hello_world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Hello_world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\printex.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\printex.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Vectordo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Vectordo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\register_types.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\register_types.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\custom_collision.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\custom_collision.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\custom_collision.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\custom_collision.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\register_types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\register_types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\gdexample.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\gdexample.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Vectordo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Vectordo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\gdexample.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\gdexample.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\moving_sprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\moving_sprite.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\moving_sprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\moving_sprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\gdexample.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\gdexample.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +46,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "register_types.h",
-              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\register_types.h",
-              "RelativeDocumentMoniker": "src\\register_types.h",
-              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\register_types.h",
-              "RelativeToolTip": "src\\register_types.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-28T20:54:09.258Z",
+              "DocumentIndex": 0,
+              "Title": "printex.cpp",
+              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\printex.cpp",
+              "RelativeDocumentMoniker": "src\\printex.cpp",
+              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\printex.cpp",
+              "RelativeToolTip": "src\\printex.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-15T08:28:31.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "custom_collision.cpp",
-              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\custom_collision.cpp",
-              "RelativeDocumentMoniker": "src\\custom_collision.cpp",
-              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\custom_collision.cpp",
-              "RelativeToolTip": "src\\custom_collision.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-28T20:13:56.008Z",
+              "Title": "Hello_world.h",
+              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Hello_world.h",
+              "RelativeDocumentMoniker": "src\\Hello_world.h",
+              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Hello_world.h",
+              "RelativeToolTip": "src\\Hello_world.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-15T08:22:16.248Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "custom_collision.h",
-              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\custom_collision.h",
-              "RelativeDocumentMoniker": "src\\custom_collision.h",
-              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\custom_collision.h",
-              "RelativeToolTip": "src\\custom_collision.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-28T20:12:48.972Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "register_types.cpp",
-              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\register_types.cpp",
-              "RelativeDocumentMoniker": "src\\register_types.cpp",
-              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\register_types.cpp",
-              "RelativeToolTip": "src\\register_types.cpp",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAsAAAA",
+              "Title": "Hello_world.cpp",
+              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Hello_world.cpp",
+              "RelativeDocumentMoniker": "src\\Hello_world.cpp",
+              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Hello_world.cpp",
+              "RelativeToolTip": "src\\Hello_world.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-27T16:48:00.402Z",
+              "WhenOpened": "2024-06-15T07:44:19.645Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "printex.h",
+              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\printex.h",
+              "RelativeDocumentMoniker": "src\\printex.h",
+              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\printex.h",
+              "RelativeToolTip": "src\\printex.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-15T07:17:32.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Vectordo.h",
+              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Vectordo.h",
+              "RelativeDocumentMoniker": "src\\Vectordo.h",
+              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Vectordo.h",
+              "RelativeToolTip": "src\\Vectordo.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-03T19:01:53.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Vectordo.cpp",
+              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Vectordo.cpp",
+              "RelativeDocumentMoniker": "src\\Vectordo.cpp",
+              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\Vectordo.cpp",
+              "RelativeToolTip": "src\\Vectordo.cpp",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-03T19:01:54.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "gdexample.h",
               "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\gdexample.h",
               "RelativeDocumentMoniker": "src\\gdexample.h",
               "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\gdexample.h",
               "RelativeToolTip": "src\\gdexample.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-27T16:37:42.889Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "gdexample.cpp",
               "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\gdexample.cpp",
               "RelativeDocumentMoniker": "src\\gdexample.cpp",
               "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\gdexample.cpp",
               "RelativeToolTip": "src\\gdexample.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-27T16:37:37.54Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "moving_sprite.cpp",
-              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\moving_sprite.cpp",
-              "RelativeDocumentMoniker": "src\\moving_sprite.cpp",
-              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\moving_sprite.cpp",
-              "RelativeToolTip": "src\\moving_sprite.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAOAAAA",
+              "DocumentIndex": 5,
+              "Title": "register_types.cpp",
+              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\register_types.cpp",
+              "RelativeDocumentMoniker": "src\\register_types.cpp",
+              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\register_types.cpp",
+              "RelativeToolTip": "src\\register_types.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-28T15:51:58.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "moving_sprite.h",
-              "DocumentMoniker": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\moving_sprite.h",
-              "RelativeDocumentMoniker": "src\\moving_sprite.h",
-              "ToolTip": "C:\\Users\\99350\\OneDrive\\\u684C\u9762\\GDextension\\src\\moving_sprite.h",
-              "RelativeToolTip": "src\\moving_sprite.h",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-28T01:06:48.611Z",
+              "WhenOpened": "2024-05-27T16:48:00.402Z",
               "EditorCaption": ""
             }
           ]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwws7uu1iiw1a"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/command_system2/sub_window.gd" id="1_evy1e"]
+
+[node name="sub_window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_evy1e")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_right = 94.0
+offset_bottom = 31.0
+item_count = 2
+popup/item_0/text = "null"
+popup/item_0/id = 0
+popup/item_1/text = "assign"
+popup/item_1/id = 1
+
+[node name="assign_func" type="LineEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 39.0
+offset_top = 37.0
+offset_right = 289.0
+offset_bottom = 77.0
+
+[node name="confirm" type="Button" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 200.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 16
+text = "confirm"
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="confirm" to="." method="_on_confirm_pressed"]

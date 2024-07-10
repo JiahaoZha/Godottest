@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://dar6afte7krru"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/command_system3/vector.gd" id="1_h7h6k"]
+[ext_resource type="Texture2D" uid="uid://dipujxhgqd5xd" path="res://icon.svg" id="2_b52d5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7dy4"]
+size = Vector2(231.5, 27.5625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w657n"]
+size = Vector2(280, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cebve"]
+size = Vector2(280, 30)
+
+[node name="Vector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 26.0
+offset_top = 4.0
+offset_right = 26.0
+offset_bottom = 4.0
+script = ExtResource("1_h7h6k")
+
+[node name="vector_x" type="LineEdit" parent="."]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 45.0
+
+[node name="vector_y" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 10.0
+offset_right = 178.0
+offset_bottom = 45.0
+
+[node name="vector_z" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 10.0
+offset_right = 285.0
+offset_bottom = 45.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 105.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = ","
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_right = 216.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = ","
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 291.0
+offset_right = 331.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = ")"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = -46.0
+offset_right = -6.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "("
+horizontal_alignment = 1
+
+[node name="functions" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="functions"]
+position = Vector2(138, 3)
+shape = SubResource("RectangleShape2D_e7dy4")
+
+[node name="link_up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_up"]
+position = Vector2(143, -31)
+shape = SubResource("RectangleShape2D_w657n")
+
+[node name="link_down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_down"]
+position = Vector2(143, 84)
+shape = SubResource("RectangleShape2D_cebve")
+
+[node name="linkup" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-38.66, 1.185)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_b52d5")
+
+[node name="linkdown" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-38.66, 38.59)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_b52d5")
+
+[connection signal="mouse_entered" from="functions" to="." method="_on_functions_mouse_entered"]
+[connection signal="mouse_exited" from="functions" to="." method="_on_functions_mouse_exited"]
+[connection signal="area_entered" from="link_up" to="." method="_on_link_up_area_entered"]
+[connection signal="area_exited" from="link_up" to="." method="_on_link_up_area_exited"]
+[connection signal="area_entered" from="link_down" to="." method="_on_link_down_area_entered"]
+[connection signal="area_exited" from="link_down" to="." method="_on_link_down_area_exited"]

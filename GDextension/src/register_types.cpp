@@ -2,8 +2,9 @@
 
 #include "gdexample.h"
 #include "moving_sprite.h"
-
-#include "custom_collision.h"
+#include "Vectorgo.h"
+#include "Vectordo.h"
+#include "printex.h"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -18,7 +19,10 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 
 	ClassDB::register_class<GDExample>();
 	ClassDB::register_class<MovingSprite>();
-	ClassDB::register_class<CustomCollision>();
+	ClassDB::register_class<Vectorgo>();
+	ClassDB::register_class<Vectordo>();
+	ClassDB::register_class<printex>();
+
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {

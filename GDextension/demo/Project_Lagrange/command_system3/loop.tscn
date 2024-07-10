@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn2a4jtcdjr8l"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/command_system3/loop.gd" id="1_yiwv1"]
+[ext_resource type="Texture2D" uid="uid://dipujxhgqd5xd" path="res://icon.svg" id="2_3q31b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81hi8"]
+size = Vector2(126.25, 54.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxoai"]
+size = Vector2(164, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0f0i"]
+size = Vector2(298, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea6ms"]
+size = Vector2(303, 29)
+
+[node name="loop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_yiwv1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "loop"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_right = 249.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "times{"
+horizontal_alignment = 1
+
+[node name="Input1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 45.0
+
+[node name="functions" type="Area2D" parent="."]
+position = Vector2(157, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="functions"]
+position = Vector2(56.125, 19.25)
+shape = SubResource("RectangleShape2D_81hi8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="functions"]
+position = Vector2(-72, 0.5)
+shape = SubResource("RectangleShape2D_jxoai")
+
+[node name="link_up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_up"]
+position = Vector2(143, -27.5)
+shape = SubResource("RectangleShape2D_w0f0i")
+
+[node name="link_down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_down"]
+position = Vector2(144, 65)
+shape = SubResource("RectangleShape2D_ea6ms")
+
+[node name="linkup" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-21, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_3q31b")
+
+[node name="linkdown" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-21, 35)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_3q31b")
+
+[connection signal="mouse_entered" from="functions" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="functions" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="area_entered" from="link_up" to="." method="_on_link_up_area_entered"]
+[connection signal="area_exited" from="link_up" to="." method="_on_link_up_area_exited"]
+[connection signal="area_entered" from="link_down" to="." method="_on_link_down_area_entered"]
+[connection signal="area_exited" from="link_down" to="." method="_on_link_down_area_exited"]

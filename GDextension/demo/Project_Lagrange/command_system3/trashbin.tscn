@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://daw4yara6gfuf"]
+
+[ext_resource type="Texture2D" uid="uid://dipujxhgqd5xd" path="res://icon.svg" id="1_souq7"]
+[ext_resource type="Script" path="res://Project_Lagrange/command_system3/trashbin.gd" id="1_sybl3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wg3d"]
+size = Vector2(100, 100)
+
+[node name="trashbin" type="Area2D"]
+script = ExtResource("1_sybl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4wg3d")
+debug_color = Color(0.0230054, 0.597385, 0.711339, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.835938, 0.78125)
+texture = ExtResource("1_souq7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -67.0
+offset_top = -55.0
+offset_right = 64.0
+offset_bottom = -10.0
+theme_override_font_sizes/font_size = 32
+text = "trash_bin
+"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

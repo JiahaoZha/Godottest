@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3y6uhxcgew5t"]
+
+[ext_resource type="Script" path="res://Interactertesting/Interactpad/controlpanel.gd" id="1_x8ucf"]
+[ext_resource type="PackedScene" uid="uid://dqwyrpll0eyf4" path="res://Interactertesting/Interactpad/dragitem.tscn" id="2_yegwd"]
+[ext_resource type="PackedScene" uid="uid://cj0yxhron22en" path="res://Interactertesting/Interactpad/platform.tscn" id="3_78d12"]
+[ext_resource type="StyleBox" uid="uid://fsjn1vciyp5a" path="res://Main_menu/Button.tres" id="4_n3cnf"]
+
+[node name="Controlpanel" type="Node2D"]
+script = ExtResource("1_x8ucf")
+
+[node name="Controlpla" type="ColorRect" parent="."]
+offset_right = 440.0
+offset_bottom = 680.0
+mouse_filter = 2
+color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[node name="item" parent="Controlpla" instance=ExtResource("2_yegwd")]
+z_index = 1
+position = Vector2(344, 72)
+
+[node name="Platform1" parent="Controlpla" instance=ExtResource("3_78d12")]
+position = Vector2(80, 72)
+
+[node name="Platform2" parent="Controlpla" instance=ExtResource("3_78d12")]
+position = Vector2(80, 224)
+
+[node name="Platform3" parent="Controlpla" instance=ExtResource("3_78d12")]
+position = Vector2(80, 376)
+
+[node name="Platform4" parent="Controlpla" instance=ExtResource("3_78d12")]
+position = Vector2(80, 536)
+
+[node name="Save_Button" type="Button" parent="Controlpla"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 616.0
+offset_right = 120.0
+offset_bottom = 669.0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_n3cnf")
+theme_override_styles/hover = ExtResource("4_n3cnf")
+text = "Save"
+
+[connection signal="pressed" from="Controlpla/Save_Button" to="." method="_on_save_button_pressed"]

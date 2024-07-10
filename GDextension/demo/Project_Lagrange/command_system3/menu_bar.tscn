@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcd82xxg5adq"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/Command_editor/menu_bar.gd" id="1_xa1bu"]
+[ext_resource type="PackedScene" uid="uid://dvg8vvr303fxs" path="res://Project_Lagrange/command_system3/velocity.tscn" id="2_tn8rg"]
+[ext_resource type="PackedScene" uid="uid://dar6afte7krru" path="res://Project_Lagrange/command_system3/vector.tscn" id="3_fgu3a"]
+[ext_resource type="PackedScene" uid="uid://bn2a4jtcdjr8l" path="res://Project_Lagrange/command_system3/loop.tscn" id="4_ac7ax"]
+[ext_resource type="PackedScene" uid="uid://ws57nmxwapd1" path="res://Project_Lagrange/command_system3/end_loop.tscn" id="5_f7n65"]
+[ext_resource type="PackedScene" uid="uid://k02njswhg7iq" path="res://Project_Lagrange/command_system3/if_button.tscn" id="6_n6mgi"]
+[ext_resource type="PackedScene" uid="uid://dtafjfrwmmnb3" path="res://Project_Lagrange/command_system3/end_if.tscn" id="7_jrpq0"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ndk0c"]
+
+[node name="menu_bar" type="VBoxContainer"]
+script = ExtResource("1_xa1bu")
+velocity_bar = ExtResource("2_tn8rg")
+vector_bar = ExtResource("3_fgu3a")
+loop_bar = ExtResource("4_ac7ax")
+end_loop_bar = ExtResource("5_f7n65")
+if_bar = ExtResource("6_n6mgi")
+end_if_bar = ExtResource("7_jrpq0")
+
+[node name="assign_button" type="Button" parent="."]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ndk0c")
+text = "Assign"
+
+[node name="assign_bar" type="VBoxContainer" parent="assign_button"]
+visible = false
+layout_mode = 2
+offset_left = 90.0
+offset_right = 170.0
+offset_bottom = 120.0
+
+[node name="Velocity_Button" type="Button" parent="assign_button/assign_bar"]
+layout_mode = 2
+text = "Velocity"
+
+[node name="Vector_button" type="Button" parent="assign_button/assign_bar"]
+layout_mode = 2
+text = "Vector"
+
+[node name="functions_button" type="Button" parent="."]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ndk0c")
+text = "functions"
+
+[node name="functions_bar" type="VBoxContainer" parent="functions_button"]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_top = -35.0
+offset_right = 170.0
+offset_bottom = 85.0
+
+[node name="loop_button" type="Button" parent="functions_button/functions_bar"]
+layout_mode = 2
+text = "loop"
+
+[node name="end_loop_button" type="Button" parent="functions_button/functions_bar"]
+layout_mode = 2
+text = "end_loop"
+
+[node name="If_button" type="Button" parent="functions_button/functions_bar"]
+layout_mode = 2
+text = "If"
+
+[node name="end_If_button" type="Button" parent="functions_button/functions_bar"]
+layout_mode = 2
+text = "end if"
+
+[connection signal="pressed" from="assign_button" to="." method="_on_assign_button_pressed"]
+[connection signal="pressed" from="assign_button/assign_bar/Velocity_Button" to="." method="_on_velocity_button_pressed"]
+[connection signal="pressed" from="assign_button/assign_bar/Vector_button" to="." method="_on_vector_button_pressed"]
+[connection signal="pressed" from="functions_button" to="." method="_on_functions_button_pressed"]
+[connection signal="pressed" from="functions_button/functions_bar/loop_button" to="." method="_on_loop_button_pressed"]
+[connection signal="pressed" from="functions_button/functions_bar/end_loop_button" to="." method="_on_end_loop_button_pressed"]
+[connection signal="pressed" from="functions_button/functions_bar/If_button" to="." method="_on_if_button_pressed"]
+[connection signal="pressed" from="functions_button/functions_bar/end_If_button" to="." method="_on_end_if_button_pressed"]

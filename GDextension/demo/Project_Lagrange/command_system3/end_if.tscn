@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtafjfrwmmnb3"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/command_system3/end_if.gd" id="1_gmj8v"]
+[ext_resource type="Texture2D" uid="uid://dipujxhgqd5xd" path="res://icon.svg" id="2_bc3op"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgd1j"]
+size = Vector2(174, 50.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilxes"]
+size = Vector2(178, 31.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j05sd"]
+size = Vector2(177, 35)
+
+[node name="end_if" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gmj8v")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 174.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "} end if"
+horizontal_alignment = 1
+
+[node name="functions" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="functions"]
+position = Vector2(85, 18.375)
+shape = SubResource("RectangleShape2D_jgd1j")
+
+[node name="link_up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_up"]
+position = Vector2(87, -35)
+shape = SubResource("RectangleShape2D_ilxes")
+
+[node name="link_down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_down"]
+position = Vector2(85, 65)
+shape = SubResource("RectangleShape2D_j05sd")
+
+[node name="linkup" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-21, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_bc3op")
+
+[node name="linkdown" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-21, 35)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_bc3op")
+
+[connection signal="mouse_entered" from="functions" to="." method="_on_functions_mouse_entered"]
+[connection signal="mouse_exited" from="functions" to="." method="_on_functions_mouse_exited"]
+[connection signal="area_entered" from="link_up" to="." method="_on_link_up_area_entered"]
+[connection signal="area_exited" from="link_up" to="." method="_on_link_up_area_exited"]
+[connection signal="area_entered" from="link_down" to="." method="_on_link_down_area_entered"]
+[connection signal="area_exited" from="link_down" to="." method="_on_link_down_area_exited"]

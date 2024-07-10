@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvg8vvr303fxs"]
+
+[ext_resource type="Script" path="res://Project_Lagrange/command_system3/velocity.gd" id="1_cjx7i"]
+[ext_resource type="Texture2D" uid="uid://dipujxhgqd5xd" path="res://icon.svg" id="2_2dt4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysykd"]
+size = Vector2(33, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhfyf"]
+size = Vector2(214, 36)
+
+[node name="Velocity" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cjx7i")
+
+[node name="input1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 35.0
+
+[node name="input2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 1.0
+offset_right = 200.0
+offset_bottom = 36.0
+
+[node name="symbol" type="Label" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 4.0
+offset_right = 122.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 16
+text = "="
+horizontal_alignment = 1
+
+[node name="unit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 4.0
+offset_right = 240.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 16
+text = "m/s"
+horizontal_alignment = 1
+
+[node name="functions" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="functions"]
+position = Vector2(97.5, 15)
+shape = SubResource("RectangleShape2D_ysykd")
+
+[node name="link_up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_up"]
+position = Vector2(98, -30)
+shape = SubResource("RectangleShape2D_lhfyf")
+
+[node name="link_down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="link_down"]
+position = Vector2(99, 61)
+shape = SubResource("RectangleShape2D_lhfyf")
+
+[node name="linkup" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-21, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_2dt4i")
+
+[node name="linkdown" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.564706, 0.933333, 0.564706, 1)
+position = Vector2(-21, 35)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_2dt4i")
+
+[connection signal="mouse_entered" from="functions" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="functions" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="area_entered" from="link_up" to="." method="_on_link_up_area_entered"]
+[connection signal="area_exited" from="link_up" to="." method="_on_link_up_area_exited"]
+[connection signal="area_entered" from="link_down" to="." method="_on_link_down_area_entered"]
+[connection signal="area_exited" from="link_down" to="." method="_on_link_down_area_exited"]
